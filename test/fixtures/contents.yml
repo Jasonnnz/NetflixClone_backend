@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genre: MyString
+  type: 
+  pposter_img: MyString
+  wideposter_img: MyString
+  video: MyString
+  likes: 1
+  dislikes: 1
+  favorited: false
+
+two:
+  genre: MyString
+  type: 
+  pposter_img: MyString
+  wideposter_img: MyString
+  video: MyString
+  likes: 1
+  dislikes: 1
+  favorited: false
