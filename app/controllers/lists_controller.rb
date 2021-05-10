@@ -1,45 +1,45 @@
 class ListsController < ApplicationController
     
     def index
-        @contents = Content.all
-        render json: @contents
+        @lists = List.all
+        render json: @lists
     end
 
     def show
-        @content = Content.find(params[:id])
-        render json: @content
+        @list = List.find(params[:id])
+        render json: @list
     end
 
     def new
-        @content = Content.new
-        render json: @content
+        @list = List.new
+        render json: @list
     end
 
     def create
-        @content = Content.create(content_params)
-        render json: @content
+        @list = List.create(list_params)
+        render json: @list
     end
 
     def edit
-        @content = Content.find(params[:id])
-        render json: @content
+        @list = List.find(params[:id])
+        render json: @list
     end
 
     def update
-        @content = Content.find(params[:id])
-        @content.update(content_params)
-        render json: @content
+        @list = List.find(params[:id])
+        @list.update(list_params)
+        render json: @list
     end
 
     def destroy
-        @content = Content.find(params[:id]).destroy 
+        @list = List.find(params[:id]).destroy 
         render json: {}
     end
 
     private 
     
-    def content_params
-        params.require(:content).permit(:genre, :type, :poster_img, :wideposter_img, :video, :likes, :dislikes, :favorited)
+    def list_params
+        params.require(:list).permit(:user_id, :list_id, :genre)
     end
 
 end
