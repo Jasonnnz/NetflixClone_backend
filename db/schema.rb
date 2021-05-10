@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_05_07_183917) do
   create_table "contents", force: :cascade do |t|
     t.string "genre"
     t.string "type"
-    t.string "pposter_img"
+    t.string "poster_img"
     t.string "wideposter_img"
     t.string "video"
     t.integer "likes"

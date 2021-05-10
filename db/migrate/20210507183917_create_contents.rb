@@ -3,7 +3,7 @@ class CreateContents < ActiveRecord::Migration[6.0]
     create_table :contents do |t|
       t.string :genre
       t.string :type
-      t.string :pposter_img
+      t.string :poster_img
       t.string :wideposter_img
       t.string :video
       t.integer :likes
