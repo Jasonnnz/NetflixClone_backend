@@ -39,7 +39,7 @@ class ContentsController < ApplicationController
     private 
     
     def content_params
-        params.require(:content).permit(:genre, :type, :poster_img, :wideposter_img, :video, :likes, :dislikes, :favorited)
+        params.require(:content).permit(:title, :genre, :type, :poster_img, :likes, :dislikes, :favorited, :overview, :release_year)
     end
 
 end
