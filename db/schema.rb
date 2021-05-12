@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_183917) do
+ActiveRecord::Schema.define(version: 2021_05_12_184421) do
+
+  create_table "content_lists", force: :cascade do |t|
+    t.integer "content_id"
+    t.integer "list_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "contents", force: :cascade do |t|
     t.string "title"
@@ -28,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_05_07_183917) do
 
   create_table "lists", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "content_id"
+    t.integer "contentList_id"
     t.string "genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

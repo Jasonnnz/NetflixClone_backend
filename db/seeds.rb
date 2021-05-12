@@ -7,13 +7,17 @@ jason = User.create(id:1, name:"jason",password:"abc123",email:"jason@gmail.com"
 erwin = User.create(id: 2, name:"erwin",password:"abc123",email:"erwin@gmail.com")
 daniel = User.create(id: 3, name:"daniel",password:"abc123",email:"daniel@gmail.com")
 
+List.create(user_id: 1)
+List.create(user_id: 2)
+List.create(user_id: 3)
+
 [1,2,3,4,5].each do |num|
   res = RestClient.get("https://api.themoviedb.org/3/discover/movie?page=#{num}&api_key=#{ENV['MOVIE_API']}")
 
   res_body = res.body
   movies = JSON.parse(res_body)["results"]
   genres = ["Action", "Romance", "Comedy"]
-  
+
   movies.each do |movie|
     Content.create(
         title: movie["title"], 
@@ -29,10 +33,13 @@ daniel = User.create(id: 3, name:"daniel",password:"abc123",email:"daniel@gmail.
       )
     #   byebug
   end 
-  puts Content.last
 
+end
+
+10.times do 
+  ContentList.create(content_id: Content.all.sample.id, list_id: List.all.sample.id)
 end 
-List.create(user_id: 1, content_id: 2, genre: "My List")
+
 # puts "Creating Lists "
 # 200.times do 
 #   List.create(user_id: User.all.sample.id, content_id: Content.all.sample.id)

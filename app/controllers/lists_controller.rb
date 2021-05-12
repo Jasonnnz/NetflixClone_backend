@@ -39,7 +39,7 @@ class ListsController < ApplicationController
     private 
     
     def list_params
-        params.require(:list).permit(:user_id, :list_id, :genre)
+        params.require(:list).permit(:user_id, :contentList_id, :genre)
     end
 
 end

@@ -1,3 +1,3 @@
 class Content < ApplicationRecord
-    belongs_to :list
+    has_many :contentLists
 end

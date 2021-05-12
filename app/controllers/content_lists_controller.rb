@@ -1,0 +1,2 @@
+class ContentListsController < ApplicationController
+end
